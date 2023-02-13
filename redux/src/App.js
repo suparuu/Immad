@@ -3,9 +3,9 @@ import './App.css';
 import { increment, decrement } from './createSlice'
 
 
-//createSlice.js(스토어에 등록할 리듀서 작성)asd
+//createSlice.js(스토어에 등록할 리듀서 작성)
 //store.js(리듀서를 등록)dasd
-//index.js(사용할수 있도록 스토어 활용)ddd
+//index.js(사용할수 있도록 스토어 활용)
 function App() {
   const {count} = useSelector(state=>state.counter);
   const dispatch = useDispatch();
