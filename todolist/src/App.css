@@ -1,0 +1,62 @@
+.App {
+  width: 100%;
+  height: 100vh;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App article {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 3%;
+}
+.App article h1 {
+  margin: 0;
+}
+.App article p {
+  padding: 20px 0;
+  border-bottom: 1px dashed #000;
+  color: red;
+}
+.App article .list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.App article .list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.App article .list li button {
+  background-color: blueviolet;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+.App article .list li.active {
+  color: #999;
+}
+.App article .write input {
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+.App article .write input[type=submit] {
+  width: 20%;
+  background-color: aqua;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}/*# sourceMappingURL=App.css.map */
