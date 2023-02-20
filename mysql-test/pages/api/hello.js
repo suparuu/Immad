@@ -1,43 +1,16 @@
-import nc from "next-connect";
 
-const handler = nc();
+import { executeQuery } from './db';
 
-handler.get( async(req, res)=>{
-  let data = await new Promise( (resolve,reject)=> {
-    connection.query('select * from table1', (err,result) =>{
-      resolve(result);
-    }) 
-
-  } )
-
-  /* let data = await connection.query('select * from table1', (err,result)=>{
-    console.log(result);
-  }) */
-  res.send(data);
-})
+const handler = async (req, res) => {
+  /* let data = await executeQuery('select * from table1', []); */
+  /* let data = await executeQuery('insert into table1 (name,email,date) value(?,?,?)',
+  ['홍순이','ㅇlㅁㅔ1','2013']) */ //추가
+  /* let data = await executeQuery(
+    'update table1 set name=? where id=?',
+    ['넘힘들어요',2]) */ //수정
+  /* let data = await executeQuery('delete from table1 where id=?',[3])
+  res.json(data); */ //삭제
+}
 
 export default handler;
 
-
-var mysql = require("mysql");
-var connection = mysql.createConnection({
-  host: "svc.sel3.cloudtype.app",
-  user: "root",
-  password: "1234",
-  database: "test",
-  port: 30605,
-});
-
-/* export default function handler(req, res) {
-  
-  connection.connect();
-
-  connection.query("SELECT * from table1", function (error, results, fields) {
-    if (error) throw error;
-    console.log("The solution is: ", results);
-  });
-
-  connection.end();
-
-  res.status(200).json({ name: "John Doe" });
-} */
