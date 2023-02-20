@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 let db = require("data/db.json");
 let fs = require("fs");
@@ -39,7 +38,7 @@ export default function handler(req, res) {
   }
 
   function saveData() {
-    // fss.writeFileSync("data/db.json", JSON.stringify(db));
+    fs.writeFileSync("data/db.json", JSON.stringify(db));
     res.status(200).json(db);
   }
 }
