@@ -5,46 +5,37 @@ import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "./MyContext";
 
 const List = (qq) => {
-    const test2 = useContext(DataContext)
-    console.log(test2, 'context test')
-
-  const [data, setData] = useState([]);
   const router = useRouter();
+  const { dataFun, data } = useContext(DataContext);
 
-  function dataget() {
-    axios.get(`/api/`).then((res) => setData(res.data));
-  }
+  console.log(data, "데이터");
+  useEffect(()=>{
+  dataFun('get')
+  },[])
+  
 
-   function dataDelete(id) {
-    console.log(id)
-    axios.delete(`/api/${id}`).then((res) => setData(res.data));;
-    dataget();
-  }
-  useEffect(dataget, []);
-  console.log(data,'aasd')
-
-  if (!data.length)
+  /* if (!data.length)
     return (
       <>
         loading....<Link href="/src/Write"> 글쓰기 </Link>
       </>
-    );
+    ); */
   return (
     <>
       <article>
         <h2>LIST</h2>
         <ul>
-          {data.map((obj) => (
+          {data?.map((obj) => (
             <li key={obj.id}>
-              {obj.name} / {obj.email} / {obj.tel}
+              {obj.name} / {obj.email} / {obj.date}
               <button
                 onClick={() =>
                   router.push({ pathname: "/src/Update", query: obj })
-                }
+                }//수정버튼
               >
                 수정
               </button>
-              <button onClick={() => dataDelete(obj.id)}>삭제</button>
+              <button onClick={() => dataFun('delete',obj)}>삭제</button>
             </li>
           ))}
         </ul>

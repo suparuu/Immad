@@ -31,7 +31,7 @@ console.log(req)
     case "UPDATE":
       updateDataId();
       break;
-    case "REMOVE":
+    case "DELETE":
       deleteDataId();
       break;
   }

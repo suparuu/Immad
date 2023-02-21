@@ -4,6 +4,8 @@ import React, { useContext, useState } from "react";
 import { DataContext } from "./MyContext";
 
 const Write = () => {
+  const {dataFun,data} = useContext(DataContext);
+  console.log(data)
   const router = useRouter();
   const initial = { id: "", name: "", email: "", tel: "" };
 

@@ -23,10 +23,11 @@ const handler = async (req, res) => {
   };//추가작업
 
   const deleteData = async () => {
-    let { id } = body;
-    let data = await executeQuery("delete from table1 where id=?", [id]);
+    let data = await executeQuery("delete from table1 where id=?", [query.id]);
     res.json(data);
   };//삭제작업
+
+
 
   switch (method) {
     case "GET":
